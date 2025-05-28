@@ -29,5 +29,26 @@ namespace nntrainer {
 void apply_rotary_emb_cl(Tensor &in, unsigned int dim, unsigned int from,
                          unsigned int max_timestep);
 
+/**
+ * @brief attention transform openCL version
+ *
+ * @param out
+ * @param query
+ * @param key_cache
+ * @param value_cache
+ * @param from
+ * @param to
+ * @param num_head_q
+ * @param num_head_kv
+ * @param head_dim
+ * @return true if successful
+ * @return false
+ */
+bool attentionTransformCl(Tensor &out, Tensor &query, Tensor &key_cache,
+                          const Tensor &value_cache, const unsigned int from,
+                          const unsigned int to, const unsigned int num_head_q,
+                          const unsigned int num_head_kv,
+                          unsigned int head_dim);
+
 } // namespace nntrainer
 #endif /* __ATTENTION_KERNEL_INTERFACE_H__ */

@@ -224,4 +224,15 @@ void rotary_emb_cl(float *in, float *out,
 
   } while (false);
 }
+
+bool attention_transform_cl(float *query, float *key_cache, float *value_cache,
+                            unsigned int from, unsigned int to,
+                            unsigned int num_head_q, unsigned int num_head_kv,
+                            unsigned int dim_head) {
+  ClContext::SharedPtrClKernel kernel = attention_cc->registerClKernel(
+    getRotaryEmbClKernel(), "attention_transform");
+  if (!kernel)
+    return false;
+  return true;
+}
 } // namespace nntrainer
