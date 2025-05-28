@@ -79,8 +79,7 @@ __kernel void attention_transform_cl()
   
 }
 )";
-const std::string &getAttentionTransformClKernel()
-{
+const std::string &getAttentionTransformClKernel() {
   return attention_transform_cl_kernel_;
 }
 
