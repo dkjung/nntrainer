@@ -73,6 +73,17 @@ const std::string &getRotaryEmbClKernel() {
   return rotary_emb_cl_kernel_;
 }
 
+static const std::string attention_transform_cl_kernel_ = R"(
+__kernel void attention_transform_cl()
+{
+  
+}
+)";
+const std::string &getAttentionTransformClKernel()
+{
+  return attention_transform_cl_kernel_;
+}
+
 #ifdef ENABLE_FP16
 
 const std::string &getRotaryEmbClKernelFP16() {

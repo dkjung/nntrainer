@@ -19,6 +19,7 @@
 namespace nntrainer {
 
 const std::string &getRotaryEmbClKernel();
+const std::string &getAttentionTransformClKernel();
 
 #ifdef ENABLE_FP16
 

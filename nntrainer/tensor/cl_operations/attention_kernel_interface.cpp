@@ -135,4 +135,13 @@ void apply_rotary_emb_cl(Tensor &in, unsigned int dim, unsigned int from,
 
   in.copy(out);
 }
+
+bool attentionTransformCl(Tensor &out, Tensor &query, Tensor &key_cache,
+                          const Tensor &value_cache, const unsigned int from,
+                          const unsigned int to, const unsigned int num_head_q,
+                          const unsigned int num_head_kv,
+                          unsigned int head_dim) {
+  return true;
+}
+
 } // namespace nntrainer

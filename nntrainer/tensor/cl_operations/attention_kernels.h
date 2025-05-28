@@ -55,6 +55,25 @@ void rotary_emb_cl(float *in, float *out,
                    unsigned int from, unsigned int max_timestamp,
                    unsigned int in_size, unsigned int out_size);
 
+/**
+ * @brief C wrapper function for invoking openCL kernel for attention transform
+ *
+ * @param query
+ * @param key_cache
+ * @param value_cache
+ * @param from
+ * @param to
+ * @param num_head_q
+ * @param num_head_kv
+ * @param dim_head
+ * @return true
+ * @return false
+ */
+bool attention_transform_cl(float *query, float *key_cache, float *value_cache,
+                            unsigned int from, unsigned int to,
+                            unsigned int num_head_q, unsigned int num_head_kv,
+                            unsigned int dim_head);
+
 #ifdef ENABLE_FP16
 
 /**
