@@ -791,3 +791,5 @@ endif
 if get_option('enable-benchmarks')
   subdir('benchmarks')
 endif
+
+# this is for checking modifiability
